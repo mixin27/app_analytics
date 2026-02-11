@@ -46,13 +46,12 @@ dependencies:
   app_analytics: ^0.0.1
 
   # Required dependencies
-  shared_preferences: ^2.2.0
+  shared_preferences: ^2.5.4
 
   # Optional - add only the providers you need
-  firebase_analytics: ^10.8.0      # For Firebase Analytics
-  mixpanel_flutter: ^2.2.0         # For Mixpanel
-  amplitude_flutter: ^3.16.0       # For Amplitude
-  segment_analytics: ^0.1.0        # For Segment
+  firebase_analytics: ^12.1.2      # For Firebase Analytics
+  mixpanel_flutter: ^2.5.0         # For Mixpanel
+  amplitude_flutter: ^4.3.10       # For Amplitude
 ```
 
 Then run:
@@ -171,7 +170,7 @@ await AnalyticsService.instance.reset();
 - **Strategy Pattern** - Multiple interchangeable providers
 - **Chain of Responsibility** - Middleware pipeline
 - **Singleton** - Single analytics service instance
-- **Builder** - Event construction
+<!-- - **Builder** - Event construction -->
 - **Factory** - Provider creation
 
 ---
@@ -186,9 +185,6 @@ await AnalyticsService.instance.reset();
 | **Firebase Analytics** | ✅ Ready | Google's free analytics |
 | **Mixpanel** | ✅ Ready | Product analytics |
 | **Amplitude** | ✅ Ready | Behavioral analytics |
-| **Segment** | ⚠️ Template | Customer data platform |
-| **PostHog** | ⚠️ Template | Open-source analytics |
-| **Google Analytics 4** | 📋 Planned | Web & app analytics |
 | **Custom** | ✅ Template | Your own service |
 
 ### Console Provider (Development)
@@ -1094,7 +1090,7 @@ final config = AnalyticsConfig(
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read our contributing guidelines.
+Contributions are welcome! Please read our [CONTRIBUTING](CONTRIBUTING.md) guidelines.
 
 ### Adding a New Provider
 
@@ -1115,23 +1111,4 @@ Contributions are welcome! Please read our contributing guidelines.
 
 ## 📄 License
 
-This package is part of the Collection Tracker project.
-
----
-
-## 🙏 Acknowledgments
-
-- Firebase Analytics
-- Mixpanel
-- Amplitude
-- Flutter community
-
----
-
-## 📞 Support
-
-For issues, questions, or suggestions:
-
-- Create an issue on GitHub
-- Check documentation
-- Review examples
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
