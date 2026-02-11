@@ -56,7 +56,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
-    ScreenEvents.screenViewed(screenName: 'HomeScreen');
+    AnalyticsService.instance.trackScreen('HomeScreen');
     super.initState();
   }
 
@@ -72,10 +72,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          AnalyticsEvent.buttonClicked(
-            buttonName: 'home_fab_button',
-            screenName: 'HomeScreen',
-            properties: {'test': 'test'},
+          AnalyticsService.instance.track(
+            AnalyticsEvent.buttonClicked(
+              buttonName: 'home_fab_button',
+              screenName: 'HomeScreen',
+              properties: {'test': 'test'},
+            ),
           );
         },
         tooltip: 'Increment',
