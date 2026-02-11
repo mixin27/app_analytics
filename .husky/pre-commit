@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Running pre-commit checks..."
+
+# Format code
+echo "Formatting code..."
+dart format --set-exit-if-changed .
+
+# Analyze code
+echo "Analyzing code..."
+flutter analyze lib test
+
+if [ $? -ne 0 ]; then
+    echo "❌ Analysis failed. Please fix issues before committing."
+    exit 1
+fi
+
+echo "✅ Pre-commit checks passed!"
+exit 0
